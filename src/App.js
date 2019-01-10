@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import I18n, {I18nString} from "./I18n";
+
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <I18nString value="app.name">{({value}) => <img src={logo} className="App-logo" title={value} />}</I18nString>
+
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -18,6 +21,7 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
+            <I18n value="app.name"/>
           </a>
         </header>
       </div>
