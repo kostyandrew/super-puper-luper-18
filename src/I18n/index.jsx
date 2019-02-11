@@ -37,6 +37,6 @@ export default (props) => {
 
 export const I18nString = (props) => {
 	return <I18nContext.Consumer>
-		{(data) => React.createElement(props.children, { value: get(data, props.value) })}
+		{(data) => props.children.call(null, get(data, props.value))}
 	</I18nContext.Consumer>
 }
